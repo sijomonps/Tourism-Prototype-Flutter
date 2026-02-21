@@ -28,7 +28,7 @@ import 'restaurants_screen.dart';
 import 'homestays_screen.dart';
 import 'activities_screen.dart';
 import 'search_screen.dart';
-import 'place_detail_screen.dart';
+import 'location_overview_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -342,8 +342,18 @@ class _HomeBody extends StatelessWidget {
                         color: Color(0xFF2C2C2C),
                       ),
                     ),
-                    Icon(Icons.arrow_forward_ios_rounded,
-                        size: 16, color: Colors.grey.shade500),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => const ExploreScreen(),
+                          ),
+                        );
+                      },
+                      child: Icon(Icons.arrow_forward_ios_rounded,
+                          size: 16, color: Colors.grey.shade500),
+                    ),
                   ],
                 ),
               ),
@@ -364,11 +374,10 @@ class _HomeBody extends StatelessWidget {
                       rating: place['rating'] as double,
                       imageUrl: place['image'] as String,
                       onTap: () {
-                        // Navigate to the Place Detail screen
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (_) => PlaceDetailScreen(
+                            builder: (_) => LocationOverviewScreen(
                               placeName: place['name'] as String,
                               rating: place['rating'] as double,
                               imageUrl: place['image'] as String,

@@ -11,6 +11,7 @@ import 'restaurants_screen.dart';
 import 'hotels_screen.dart';
 import 'homestays_screen.dart';
 import 'activities_screen.dart';
+import 'location_overview_screen.dart';
 
 class ExploreScreen extends StatelessWidget {
   const ExploreScreen({super.key});
@@ -22,24 +23,28 @@ class ExploreScreen extends StatelessWidget {
     {
       'name': 'Parunthumpara',
       'subtitle': 'Eagle Rock & Valley Views',
+      'rating': 4.7,
       'image':
           'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600',
     },
     {
       'name': 'Pine Forest',
       'subtitle': 'Scenic Pine Trails',
+      'rating': 4.6,
       'image':
           'https://images.unsplash.com/photo-1448375240586-882707db888b?w=600',
     },
     {
       'name': 'Azhutha',
       'subtitle': 'Riverside Charm',
+      'rating': 4.5,
       'image':
           'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600',
     },
     {
       'name': 'Kuttikanam',
       'subtitle': 'Tea Plantations & Hills',
+      'rating': 4.8,
       'image':
           'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600',
     },
@@ -141,8 +146,10 @@ class ExploreScreen extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (_) => RestaurantsScreen(
-                            selectedLocation: place['name'] as String,
+                          builder: (_) => LocationOverviewScreen(
+                            placeName: place['name'] as String,
+                            imageUrl: place['image'] as String,
+                            rating: place['rating'] as double,
                           ),
                         ),
                       );
