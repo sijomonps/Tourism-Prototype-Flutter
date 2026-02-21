@@ -18,7 +18,9 @@ samples, guidance on mobile development, and a full API reference.
 
 
 ## To Pull
+```
 git clone https://github.com/sijomonps/Tourism-Prototype-Flutter <br>
 cd your_project<br>
 flutter pub get<br>
 flutter run<br>
+```
